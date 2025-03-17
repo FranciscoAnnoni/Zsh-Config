@@ -34,13 +34,13 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 3. **Plugins de Zsh**
   - zsh-autosuggestions: Sugiere comandos basados en el historial.
-   ```
-   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   ```
+      ```
+      git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      ```
   - zsh-syntax-highlighting: Resalta la sintaxis de los comandos.
-   ```
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-   ```
+      ```
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+      ```
 
 4. **Colorls**
    Una herramienta para mejorar la visualización de archivos y directorios.
