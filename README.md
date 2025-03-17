@@ -14,25 +14,25 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
    ```
 
 2. **Git:** Para clonar este repositorio.
-```
-brew install git
-```
+   ```
+   brew install git
+   ```
 
 ## 📦 Dependencias
 
-1. Oh My Zsh
-Oh My Zsh es un framework para gestionar la configuración de Zsh.
-```
- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+1. **Oh My Zsh:**
+   Oh My Zsh es un framework para gestionar la configuración de Zsh.
+   ```
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
 
-2. Powerlevel10k
-Un tema personalizado para Zsh que mejora la apariencia del prompt.
-```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
+2. **Powerlevel10k**
+   Un tema personalizado para Zsh que mejora la apariencia del prompt.
+   ```
+   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
 
-3. Plugins de Zsh
+3. **Plugins de Zsh**
   - zsh-autosuggestions: Sugiere comandos basados en el historial.
    ```
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -42,11 +42,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    ```
 
-4. Colorls
-Una herramienta para mejorar la visualización de archivos y directorios.
-```
-sudo gem install colorls
-```
+4. **Colorls**
+   Una herramienta para mejorar la visualización de archivos y directorios.
+   ```
+   sudo gem install colorls
+   ```
 
 ### Recomendaciones:
 **Fuentes para Powerlevel10k:** 
