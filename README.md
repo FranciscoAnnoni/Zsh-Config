@@ -31,6 +31,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
    ```
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
+**(IMPORTANT: In this step, you need to download the Powerlevel10k font. So before copying your ~/.zshrc, you should "pre-configure" Powerlevel10k by running ```source ~/.zshrc``` and doing a quick setup, just to ensure the Meslo font gets downloaded.)**
 
 3. **Plugins de Zsh**
   - zsh-autosuggestions: Sugiere comandos basados en el historial.
