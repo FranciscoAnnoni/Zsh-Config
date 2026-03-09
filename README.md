@@ -69,6 +69,15 @@ cp ~/mi-config-zsh/.zshrc ~/.zshrc
 
 cp ~/mi-config-zsh/.p10k.zsh ~/.p10k.zsh
 
+
+----
+
+## Videos de Referencia:
+
+- https://www.youtube.com/watch?v=CF1tMjvHDRA&t=368s
+
+- https://www.youtube.com/watch?v=wNQpDWLs4To&t=269s
+
 cp -r ~/mi-config-zsh/.oh-my-zsh ~/.oh-my-zsh
 ```
 
