@@ -1,83 +1,75 @@
-# Configuración de Zsh y iTerm2
+# Configuración de Zsh y iTerm2 (Cross-Platform)
 
-Este repositorio contiene mi configuración personalizada de Zsh y iTerm2 para Mac. Incluye temas, plugins y alias para mejorar la productividad en la terminal.
+Este repositorio contiene mi configuración personalizada de Zsh, optimizada para macOS (iTerm2) y Linux (Terminator). Incluye temas (Powerlevel10k), plugins y alias para mejorar la productividad.
 
 ---
 
-## 📋 Requisitos previos
+## 🚀 Instalación Automática (Recomendada)
 
-Antes de comenzar, asegúrate de tener instalado lo siguiente:
+El instalador automático descargará todas las dependencias necesarias (Zsh, fuentes, temas, plugins, terminal) y configurará todo por ti.
 
-1. **Homebrew**: El gestor de paquetes para macOS.
-   ```
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
+### 🐧 Linux (Debian/Ubuntu/Lubuntu)
+Ejecuta el siguiente comando en tu terminal:
 
-2. **Git:** Para clonar este repositorio.
-   ```
-   brew install git
-   ```
+```bash
+# Opción 1: Si ya clonaste el repo
+./install_linux.sh
 
-## 📦 Dependencias
-
-1. **Oh My Zsh:**
-   Oh My Zsh es un framework para gestionar la configuración de Zsh.
-   ```
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-   ```
-
-2. **Powerlevel10k**
-   Un tema personalizado para Zsh que mejora la apariencia del prompt.
-   ```
-   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-   ```
-**(IMPORTANT: In this step, you need to download the Powerlevel10k font. So before copying your ~/.zshrc, you should "pre-configure" Powerlevel10k by running ```source ~/.zshrc``` and doing a quick setup, just to ensure the Meslo font gets downloaded.)**
-
-3. **Plugins de Zsh**
-  - zsh-autosuggestions: Sugiere comandos basados en el historial.
-      ```
-      git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-      ```
-  - zsh-syntax-highlighting: Resalta la sintaxis de los comandos.
-      ```
-      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-      ```
-
-4. **Colorls**
-   Una herramienta para mejorar la visualización de archivos y directorios.
-   ```
-   sudo gem install colorls
-   ```
-
-### Recomendaciones:
-**Fuentes para Powerlevel10k:** 
-Powerlevel10k requiere fuentes especiales para mostrar correctamente los iconos y símbolos.
-``` 
-brew tap homebrew/cask-fonts
-brew install --cask font-meslo-lg-nerd-font
+# Opción 2: One-liner (requiere curl)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/FranciscoAnnoni/Zsh-Config/main/install_linux.sh)"
 ```
 
-**Visual Studio:** Recordar que cuando configuremos la terminal, la fuente de la terminal debe ser la misma configurada en iterm2 para poder ver los iconos.
+### 🍎 macOS
+Ejecuta el siguiente comando:
 
------
------
-# Configuración
-1. Clona este repositorio.
-2. Copia los archivos de configuración: *Copia .zshrc , .p10k.zsh y Copia la carpeta .oh-my-zsh*
-``` 
-cp ~/mi-config-zsh/.zshrc ~/.zshrc
+```bash
+# Opción 1: Si ya clonaste el repo
+./install_mac.sh
 
-cp ~/mi-config-zsh/.p10k.zsh ~/.p10k.zsh
-
-
-----
-
-## Videos de Referencia:
-
-- https://www.youtube.com/watch?v=CF1tMjvHDRA&t=368s
-
-- https://www.youtube.com/watch?v=wNQpDWLs4To&t=269s
-
-cp -r ~/mi-config-zsh/.oh-my-zsh ~/.oh-my-zsh
+# Opción 2: One-liner (requiere curl)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/FranciscoAnnoni/Zsh-Config/main/install_mac.sh)"
 ```
 
+---
+
+## 🛠 Qué hace el instalador?
+
+1.  **Dependencias:** Instala `zsh`, `git`, `python3`, `ruby`, y la terminal recomendada (`terminator` en Linux, `iterm2` en Mac).
+2.  **Fuentes:** Descarga e instala automáticamente las fuentes `MesloLGS NF` requeridas por Powerlevel10k.
+3.  **Configuración:**
+    *   Restaura `.zshrc`, `.p10k.zsh` y la carpeta `.oh-my-zsh` completa.
+    *   Configura el tema visual de la terminal:
+        *   **Linux:** Genera automáticamente el archivo de configuración de Terminator con los colores de iTerm2.
+        *   **Mac:** Abre el archivo de perfil para importarlo en iTerm2.
+4.  **Extras:** Instala la gema `colorls` para listar directorios con iconos.
+
+---
+
+## 📂 Estructura del Proyecto
+
+*   `install_linux.sh`: Script de arranque para Linux. Instala paquetes apt y lanza el configurador.
+*   `install_mac.sh`: Script de arranque para macOS. Instala Homebrew/casks y lanza el configurador.
+*   `installer.py`: Script principal en Python. Maneja la lógica común (descarga de fuentes, restauración de dotfiles, conversión de colores).
+*   `zsh-backup.zip`: Backup comprimido de toda la configuración (.zshrc, plugins, temas).
+*   `Francisco.json`: Esquema de colores exportado de iTerm2 (fuente de verdad para los colores).
+
+---
+
+## ⚙️ Instalación Manual (Fallback)
+
+Si el instalador falla, puedes seguir estos pasos:
+
+1.  **Instalar dependencias:**
+    *   **Mac:** `brew install zsh romkatv/powerlevel10k/powerlevel10k git ruby`
+    *   **Linux:** `sudo apt install zsh git ruby-full terminator`
+2.  **Instalar Fuentes:** Descarga e instala `MesloLGS NF` desde [aquí](https://github.com/romkatv/powerlevel10k#manual-font-installation).
+3.  **Restaurar Config:**
+    *   Descomprime `zsh-backup.zip` en tu home (`~/`).
+    *   Asegúrate de que `.zshrc` apunte a la carpeta correcta.
+4.  **Configurar Terminal:**
+    *   **Mac:** Importa `Francisco.json` en iTerm2 > Profiles > Colors.
+    *   **Linux:** Copia el contenido generado en `~/.config/terminator/config`.
+5.  **Colorls:** `sudo gem install colorls`.
+
+---
+**Nota:** Para desinstalar o revertir, simplemente elimina los archivos `.zshrc`, `.p10k.zsh` y la carpeta `.oh-my-zsh`.
